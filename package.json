@@ -1,0 +1,20 @@
+{
+  "name": "treasyjs.webapp-1",
+  "version": "1.0.0",
+  "description": "Angular JS Demo App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.8"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0",
+    "browser-sync": "2.23.5"
+  }
+}

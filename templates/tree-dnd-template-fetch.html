@@ -1,0 +1,23 @@
+<script type="text/ng-template" id="tree-dnd-template-fetch.html">
+    <div class="tree-row"
+         ng-class="(node.__selected__ ? 'list-group-item-success':'')"
+         ng-click="onSelect(node)"
+         ng-style="expandingProperty.cellStyle ? expandingProperty.cellStyle : {}">
+        <a tree-dnd-node-handle>
+            <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+        </a>
+        {{node[expandingProperty.field] || node[expandingProperty]}}
+        <a ng-click="user_clicks_branch(row.branch)">
+            <i ng-class="$iconClass" ng-click="toggleExpand(node)"></i>
+            <span ng-repeat="col in colDefinitions" ng-class="col.cellClass" ng-style="col.cellStyle"
+                  compile="col.cellTemplate">
+                {{node[col.field]}}
+            </span>
+        </a>
+    </div>
+    <ul tree-dnd-nodes="node.__children__">
+        <li tree-dnd-node="node" ng-repeat="node in nodes track by node.__hashKey__"
+            ng-show="node.__visible__" compile="expandingProperty.cellTemplate"
+            ng-include="'tree-dnd-template-fetch.html'"></li>
+    </ul>
+</script>
