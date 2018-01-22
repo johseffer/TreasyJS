@@ -1,5 +1,8 @@
 # TreasyJS
 
+A SPA App containing user and product registration forms.
+Take a look: https://treasyjs.firebaseapp.com
+
 Referenced packages:
 
 * Angular JS @1.6.8
@@ -13,4 +16,4 @@ How to run:
 - Download the project packages if nedded with "npm install" and "bower install";
 - Build the project with "npm start" and the project will be opened on your browser;
 
-                                                                                                          by: Johseffer @2018
+                                                                              by: Johseffer @2018
