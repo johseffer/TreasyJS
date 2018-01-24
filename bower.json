@@ -1,7 +1,7 @@
 {
   "name": "treasyjs.webapp-1",
   "description": "Angular JS Demo App",
-  "main": "js/main.js",
+  "main": "js/app.js",
   "authors": [
     "Johseffer Wellynton Chepli <johseffer.chepli@becomex.com.br>"
   ],
@@ -17,7 +17,6 @@
   "dependencies": {
     "angular": "^1.6.8",
     "angular-route": "1.6.8",
-    "angular-tree-dnd": "latest",
     "angular-bootstrap-grid-tree": "latest"
   },
   "resolutions": {

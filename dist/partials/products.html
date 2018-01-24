@@ -1,0 +1,48 @@
+<!-- Page Content -->
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Products
+                <small>What We Do</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="active">Products</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <!-- .row -->
+    <div class="row">
+        <div style="width:100%;margin-right:20px;">
+            <button ng-click="products_treegrid.expand_all()" class="btn btn-default btn-sm">Expand All</button>
+            <button ng-click="products_treegrid.collapse_all()" class="btn btn-default btn-sm">Collapse All</button>
+
+            <input type="text" name="search" ng-keypress="checkIfEnterKeyWasPressed($event)" id="search" ng-model="filterString" />
+
+            <button type="button" class="btn btn-default btn-sm" aria-label="Left Align" ng-click="search()">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm" style="float:right;" aria-label="Left Align" ng-click="deleteForm()">
+                <span class="fa fa-trash-o" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm" style="float:right;" aria-label="Left Align" ng-click="editForm()">
+                <span class="fa fa-pencil" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm" style="float:right;" aria-label="Left Align" ng-click="addForm()">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <tree-grid tree-data="tree_data" tree-control="products_treegrid" template-url="../templates/tree.html" col-defs="col_defs"
+            expand-on="expanding_property" on-select="my_tree_handler(branch)"></tree-grid>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
