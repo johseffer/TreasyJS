@@ -1,6 +1,6 @@
 # TreasyJS
 
-A SPA App containing user and product registration forms.
+A SPA App containing a product registration form in treeview model.
 Take a look: https://treasyjs.firebaseapp.com
 
 Made with:
