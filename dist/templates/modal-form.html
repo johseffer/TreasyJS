@@ -1,5 +1,7 @@
 <div class="modal-header">
-    <h3>Create A New Product!</h3>
+
+    <h3 ng-show="!isEdit">Add Product!</h3>
+    <h3 ng-show="isEdit">Edit Product!</h3>
 </div>
 <form name="form.productForm" ng-init="formInit()" ng-submit="submitForm()" novalidate>
     <div class="modal-body">
@@ -13,8 +15,8 @@
         <!-- Value -->
         <div class="form-group">
             <label>Value</label>
-            <input type="money" placeholder="0.00" required min="0" value="0" step="0.01" name="value" class="form-control" ng-model="product.value| currency"
-                ng-minlength="3" ng-maxlength="8" required>
+            <input type="money" placeholder="0.00" min="0" name="value" class="form-control" ng-model="product.value" ng-minlength="3"
+                ng-maxlength="8" required>
             <p ng-show="form.productForm.value.$error.minlength" class="help-block">Username is too short.</p>
             <p ng-show="form.productForm.value.$error.maxlength" class="help-block">Username is too long.</p>
         </div>
@@ -22,14 +24,14 @@
         <!-- Quant -->
         <div class="form-group">
             <label>Quant</label>
-            <input type="number" placeholder="0.00" name="quant" class="form-control" ng-model="product.quant" required>
+            <input type="number" placeholder="0" name="quant" class="form-control" ng-model="product.quant" required>
         </div>
 
 
         <!-- Observation -->
         <div class="form-group">
             <label>OBS</label>
-            <input type="text" placeholder="0.00" name="observation" class="form-control" ng-model="product.observation">
+            <input type="text" placeholder="..." name="observation" class="form-control" ng-model="product.observation">
         </div>
 
     </div>

@@ -15,6 +15,11 @@ app.config(['$locationProvider', function ($locationProvider) {
   $locationProvider.hashPrefix('');
 }]);
 
+app.config(['$uibModalProvider', function ($uibModalProvider) {
+  $uibModalProvider.options.windowClass = 'show';
+  $uibModalProvider.options.backdropClass = 'show';
+}]);
+
 /**
  * Configure the Routes
  */
@@ -254,8 +259,8 @@ app.controller('UsersCtrl', function ($scope /*, $location, $http */ ) {
 });
 
 app.controller('ProductsCtrl', [
-  '$scope', '$modal', '$filter', '$timeout',
-  function ($scope, $modal, $filter, $timeout, DataDemo) {
+  '$scope', '$uibModal', '$filter', '$timeout',
+  function ($scope, $uibModal, $filter, $timeout, DataDemo) {
 
     $scope.products_treegrid = {};
 
@@ -627,7 +632,7 @@ app.controller('ProductsCtrl', [
     $scope.addForm = function () {
       $scope.isEdit = false;
 
-      var modalInstance = $modal.open({
+      var modalInstance = $uibModal.open({
         templateUrl: '../templates/modal-form.html',
         controller: ModalInstanceCtrl,
         scope: $scope,
@@ -648,7 +653,7 @@ app.controller('ProductsCtrl', [
       $scope.isEdit = true;
 
       if ($scope.selectedItem) {
-        var modalInstance = $modal.open({
+        var modalInstance = $uibModal.open({
           templateUrl: '../templates/modal-form.html',
           controller: ModalInstanceCtrl,
           scope: $scope,
@@ -693,7 +698,7 @@ app.controller('ProductsCtrl', [
         alert("Não há nenhum item selecionado.");
     };
 
-    var ModalInstanceCtrl = function ($scope, $modalInstance, productForm) {
+    var ModalInstanceCtrl = function ($scope, $uibModalInstance, productForm) {
       $scope.form = {};
       $scope.product = {};
       $scope.oldName = "";
@@ -739,14 +744,14 @@ app.controller('ProductsCtrl', [
             alert("Dados alterados com sucesso!");
           }
 
-          $modalInstance.close('closed');
+          $uibModalInstance.close('closed');
         } else {
           console.log('productForm is not in scope');
         }
       };
 
       $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+        $uibModalInstance.dismiss('cancel');
       };
 
       $scope.updateItem = function (obj) {

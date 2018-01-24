@@ -6,7 +6,7 @@ Take a look: https://treasyjs.firebaseapp.com
 Made with:
 
 * Angular JS @1.6.8
-* Bootstrap @3.3.7
+* Bootstrap @4.0.0
 * LiteServer @2.3.0 (Dev only)
 * Gulp @3.9.1 (Dev only)
 * Firebase (Prod only)

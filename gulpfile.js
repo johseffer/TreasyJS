@@ -26,12 +26,12 @@ var path = {
         'src/partials/**/*.html',
         'src/partials/*.html',
         'src/templates/**/*.html',
-        'src/templates/*.html',
-        'src/favicon.png'
+        'src/templates/*.html'
     ],
-    ANGULAR: [
+    BOWER: [
         'bower_components/angular/angular.js',
         'bower_components/angular-route/angular-route.js',
+        'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     ],
     LIB: [
         'src/lib/*.js',
@@ -42,7 +42,8 @@ var path = {
         'src/js/**/*.js'
     ],
     CSS: [
-        'src/css/*.css'
+        'src/css/*.css',
+        'bower_components/angular-bootstrap/ui-bootstrap-csp.css'
     ],
     LESS: [
         'src/less/style.less'
@@ -51,7 +52,8 @@ var path = {
         'src/less/*.less'
     ],
     IMG: [
-        'src/img/**'
+        'src/img/**',
+        'src/assets/**'
     ],
     VENDOR: [
         'bower_components/angular/angular.js',
@@ -132,8 +134,8 @@ gulp.task('vendor', function () {
 });
 
 /* copy over markups */
-gulp.task('angular', function () {
-    gulp.src(path.ANGULAR, {
+gulp.task('bower', function () {
+    gulp.src(path.BOWER, {
             base: 'bower_components'
         })
         .pipe(gulp.dest(path.DIST + '/js'));
@@ -155,9 +157,10 @@ gulp.task('html', function () {
 
 /* compress images */
 gulp.task('img', function () {
-    gulp.src(path.IMG)
-        .pipe(imagemin())
-        .pipe(gulp.dest(path.DIST + '/img'));
+    gulp.src(path.IMG, {
+            base: 'src'
+        })
+        .pipe(gulp.dest(path.DIST));
 });
 
 /* watch all changes */
@@ -174,11 +177,11 @@ gulp.task('watch', function () {
 gulp.task("build", function (callback) {
     // process.env.NODE_ENV = "production";
 
-    runSequence('clean', 'lint', 'css', 'less', 'lib', 'angular', 'vendor', 'js', 'html', 'img', 'connect', 'watch', callback);
+    runSequence('clean', 'lint', 'css', 'less', 'lib', 'bower', 'vendor', 'js', 'html', 'img', 'connect', 'watch', callback);
 });
 
 gulp.task("build-min", function (callback) {
     // process.env.NODE_ENV = "production";
 
-    runSequence('clean', 'lint', 'css', 'less', 'lib', 'angular', 'vendor', 'js-ug', 'html', 'img', callback);
+    runSequence('clean', 'lint', 'css', 'less', 'lib', 'bower', 'vendor', 'js-ug', 'html', 'img', callback);
 });

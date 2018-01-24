@@ -23,6 +23,12 @@
      max-height : 30px;
  }
  
+ .tree-grid-row.active {
+     opacity    : 1;
+     max-height : 30px;
+     background-color: rgb(232, 228, 228);
+ }
+ 
  .tree-grid-animate-leave,
  .tree-grid-row.ng-leave {
      -moz-transition: 200ms linear all;
