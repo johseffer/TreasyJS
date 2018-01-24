@@ -20,11 +20,5 @@ How to run:
 - Build the project with "gulp build" and the project will be opened on your browser;
 - Deploy the app to the domain with "npm run deploy";
 
-To do:
-
-- Delete itens
-- Tooltip
-- Change Modal fields
-
 
                                                                               by: Johseffer @2018

@@ -267,18 +267,21 @@ app.controller('ProductsCtrl', [
           Value: 4000.00,
           Quant: 20,
           visible: true,
+          Observation: "obs...",
           level: 1,
           children: [{
               Name: "   Calça Jeans",
               Value: 200.00,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               children: [{
                   Name: "-     Calça Jeans P",
                   Value: 200.00,
                   Quant: 10,
                   visible: true,
+                  Observation: "obs...",
                   level: 3,
                   icons: {
                     iconLeaf: "fa fa-circle-o",
@@ -291,6 +294,7 @@ app.controller('ProductsCtrl', [
                   Value: 200.00,
                   Quant: 10,
                   visible: true,
+                  Observation: "obs...",
                   level: 3,
                   icons: {
                     iconLeaf: "fa fa-circle-o",
@@ -303,6 +307,7 @@ app.controller('ProductsCtrl', [
                   Value: 200.00,
                   Quant: 10,
                   visible: true,
+                  Observation: "obs...",
                   level: 3,
                   icons: {
                     iconLeaf: "fa fa-circle-o",
@@ -322,12 +327,14 @@ app.controller('ProductsCtrl', [
               Value: 200.00,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               children: [{
                   Name: "-     Calça Moleton P",
                   Value: 200.00,
                   Quant: 10,
                   visible: true,
+                  Observation: "obs...",
                   level: 3,
                   icons: {
                     iconLeaf: "fa fa-circle-o",
@@ -340,6 +347,7 @@ app.controller('ProductsCtrl', [
                   Value: 200.00,
                   Quant: 10,
                   visible: true,
+                  Observation: "obs...",
                   level: 3,
                   icons: {
                     iconLeaf: "fa fa-circle-o",
@@ -352,6 +360,7 @@ app.controller('ProductsCtrl', [
                   Value: 200.00,
                   Quant: 10,
                   visible: true,
+                  Observation: "obs...",
                   level: 3,
                   icons: {
                     iconLeaf: "fa fa-circle-o",
@@ -378,12 +387,14 @@ app.controller('ProductsCtrl', [
           Value: 999.80,
           Quant: 20,
           visible: true,
+          Observation: "obs...",
           level: 1,
           children: [{
               Name: "Bermuda Jeans",
               Value: 49.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -396,6 +407,7 @@ app.controller('ProductsCtrl', [
               Value: 49.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -415,12 +427,14 @@ app.controller('ProductsCtrl', [
           Value: 1799.9,
           Quant: 30,
           visible: true,
+          Observation: "obs...",
           level: 1,
           children: [{
               Name: "Camiseta Regata",
               Value: 39.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -433,6 +447,7 @@ app.controller('ProductsCtrl', [
               Value: 49.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -445,6 +460,7 @@ app.controller('ProductsCtrl', [
               Value: 69.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -464,6 +480,7 @@ app.controller('ProductsCtrl', [
           Value: 2299.8,
           Quant: 20,
           visible: true,
+          Observation: "obs...",
           level: 1,
           TimeZone: "Mountain",
           children: [{
@@ -471,6 +488,7 @@ app.controller('ProductsCtrl', [
               Value: 99.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -483,6 +501,7 @@ app.controller('ProductsCtrl', [
               Value: 129.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -502,12 +521,14 @@ app.controller('ProductsCtrl', [
           Value: 1299.6,
           Quant: 20,
           visible: true,
+          Observation: "obs...",
           level: 1,
           children: [{
               Name: "Cueca Box",
               Value: 29.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -520,6 +541,7 @@ app.controller('ProductsCtrl', [
               Value: 29.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -532,6 +554,7 @@ app.controller('ProductsCtrl', [
               Value: 19.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -544,6 +567,7 @@ app.controller('ProductsCtrl', [
               Value: 49.99,
               Quant: 10,
               visible: true,
+              Observation: "obs...",
               level: 2,
               icons: {
                 iconLeaf: "fa fa-circle-o",
@@ -642,14 +666,29 @@ app.controller('ProductsCtrl', [
         alert("Não há nenhum item selecionado.");
     };
 
+    $scope.deleteChild = function (item) {
+      for (var i = 0; i < item.children.length; i++) {
+        var curObj = item.children[i];
+        if (curObj.Name == $scope.selectedItem.Name)
+          item.children.splice(i, 1);
+        else if (curObj.children && curObj.children.length > 0)
+          $scope.deleteChild(curObj);
+      }
+    };
+
     $scope.deleteForm = function () {
       if ($scope.selectedItem) {
-
-        for (var i = 0; i < this.tree_data.length; i++) {
-          var curObj = this.tree_data[i];
-          if (curObj.Name == $scope.selectedItem.Name)
-            this.tree_data.slice(i, 1);
+        if (confirm("Deseja remover o item selecionado?")) {
+          for (var i = 0; i < this.tree_data.length; i++) {
+            var curObj = this.tree_data[i];
+            if (curObj.Name == $scope.selectedItem.Name)
+              this.tree_data.splice(i, 1);
+            else if (curObj.children && curObj.children.length > 0)
+              $scope.deleteChild(curObj);
+          }
         }
+
+
       } else
         alert("Não há nenhum item selecionado.");
     };
@@ -664,6 +703,7 @@ app.controller('ProductsCtrl', [
         $scope.product.name = $scope.selectedItem.Name;
         $scope.product.value = $scope.selectedItem.Value;
         $scope.product.quant = $scope.selectedItem.Quant;
+        $scope.product.observation = $scope.selectedItem.Observation;
       }
 
       $scope.formInit = function () {};
@@ -684,6 +724,7 @@ app.controller('ProductsCtrl', [
               Name: $scope.product.name,
               Value: $scope.product.value,
               Quant: $scope.product.quant,
+              Observation: $scope.product.observation,
               icons: {
                 iconLeaf: "fa fa-circle-o",
                 iconCollapse: "fa fa-minus",
@@ -716,6 +757,7 @@ app.controller('ProductsCtrl', [
               curObj.Name = $scope.product.name;
               curObj.Value = $scope.product.value;
               curObj.Quant = $scope.product.quant;
+              curObj.Observation = $scope.product.observation;
               break;
             } else if (curObj.children && curObj.children.length > 0) {
               $scope.updateItem(curObj.children);
