@@ -3,10 +3,13 @@
 A SPA App containing user and product registration forms.
 Take a look: https://treasyjs.firebaseapp.com
 
-Referenced packages:
+Made with:
 
 * Angular JS @1.6.8
-* LiteServer @2.3.0
+* Bootstrap @3.3.7
+* LiteServer @2.3.0 (Dev only)
+* Gulp @3.9.1 (Dev only)
+* Firebase (Prod only)
 * TreeGrid Directive: https://github.com/khan4019/tree-grid-directive
 
 How to run:
@@ -16,4 +19,9 @@ How to run:
 - Download the project packages if nedded with "npm install" and "bower install";
 - Build the project with "npm start" and the project will be opened on your browser;
 
+To do:
+
+- Delete itens
+- Tooltip
+- Change Modal fields
                                                                               by: Johseffer @2018
