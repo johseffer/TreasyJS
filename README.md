@@ -17,7 +17,8 @@ How to run:
 - Clone or download this repo;
 - Open the console and cd to the repo root; (Ex.: C:/Files/TreasyJS)
 - Download the project packages if nedded with "npm install" and "bower install";
-- Build the project with "npm start" and the project will be opened on your browser;
+- Build the project with "gulp build" and the project will be opened on your browser;
+- Deploy the app to the domain with "npm run deploy";
 
 To do:
 
