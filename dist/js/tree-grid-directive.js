@@ -14,9 +14,9 @@
                     "     </tr>\n" +
                     "   </thead>\n" +
                     "   <tbody>\n" +
-                    "     <tr ng-repeat=\"row in tree_rows | searchFor:$parent.filterString:expandingProperty:colDefinitions track by row.uid\"\n" +
+                    "     <tr ng-click=\"user_clicks_branch(row)\" ng-repeat=\"row in tree_rows | searchFor:$parent.filterString:expandingProperty:colDefinitions track by row.uid\"\n" +
                     "       ng-class=\"'level-' + {{ row.level }} + (row.selected ? ' active':'')\" class=\"tree-grid-row\">\n" +
-                    "       <td><a ng-click=\"user_clicks_branch(row)\"><i ng-class=\"row.tree_icon\"\n" +
+                    "       <td><a><i ng-class=\"row.tree_icon\"\n" +
                     "              ng-click=\"row.expanded = !row.expanded\"\n" +
                     "              class=\"indented tree-icon\"></i></a><span ng-if=\"expandingProperty.cellTemplate\" class=\"indented tree-label\" " +
                     "              ng-click=\"on_user_click(row)\" compile=\"expandingProperty.cellTemplate\"></span>" +
